@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Check-in</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h1>Sistema de Check-in</h1>
+
+<form action="/checkin" method="post">
+    <input type="text" name="name" placeholder="Nome" required>
+    <input type="text" name="document" placeholder="Documento">
+    <button type="submit">Check-in</button>
+</form>
+
+<h2>Check-ins realizados</h2>
+
+<table>
+    <tr>
+        <th>Nome</th>
+        <th>Documento</th>
+        <th>Data/Hora</th>
+    </tr>
+    {% for c in checkins %}
+    <tr>
+        <td>{{ c.name }}</td>
+        <td>{{ c.document or "-" }}</td>
+        <td>{{ c.created_at }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+# Test your FastAPI endpoints
+
+GET http://127.0.0.1:8000/
+Accept: text/html
+
+###
+
+POST http://127.0.0.1:8000/checkin
+Content-Type: application/x-www-form-urlencoded
+
+name=Alice&document=ABC123
+###
